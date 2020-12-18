@@ -29,32 +29,51 @@ function Square(props) {
 class Board extends React.Component {
     renderSquare(i) {
         return <Square
+            key={i}
             value={this.props.squares[i]}
             onClick={() => this.props.onClick(i)}
         />;
     }
 
     render() {
+        //this will contain the 3 rows with squares in them
+        const rows = [];
+        for (let row = 0; row < 3; row++) {
+            const currentRow = [];
+            for (let col = 0; col < 3; col++) {
+                currentRow.push(this.renderSquare(row * 3 + col));
+            }
+            rows.push(<div key={row} className="board-row"> {currentRow}</div>)
+        }
         return (
             <div>
-                <div className="board-row">
-                    {this.renderSquare(0)}
-                    {this.renderSquare(1)}
-                    {this.renderSquare(2)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(3)}
-                    {this.renderSquare(4)}
-                    {this.renderSquare(5)}
-                </div>
-                <div className="board-row">
-                    {this.renderSquare(6)}
-                    {this.renderSquare(7)}
-                    {this.renderSquare(8)}
-                </div>
+                {rows}
             </div>
-        );
+        )
+
     }
+
+    // render() {
+    //     return (
+    //         <div>
+    //             <div className="board-row">
+    //                 {this.renderSquare(0)}
+    //                 {this.renderSquare(1)}
+    //                 {this.renderSquare(2)}
+    //             </div>
+    //             <div className="board-row">
+    //                 {this.renderSquare(3)}
+    //                 {this.renderSquare(4)}
+    //                 {this.renderSquare(5)}
+    //             </div>
+    //             <div className="board-row">
+    //                 {this.renderSquare(6)}
+    //                 {this.renderSquare(7)}
+    //                 {this.renderSquare(8)}
+    //             </div>
+    //         </div>
+    //     );
+    // }
 }
 
 class Game extends React.Component {
@@ -107,8 +126,11 @@ class Game extends React.Component {
                 `Go to move #${moveNumber}, row: ${row}, col: ${column}` :
                 'Go to game start';
             return (
-                <li key={moveNumber}>
-                    <button onClick={() => this.jumpTo(moveNumber)}>
+                <li key={moveNumber} >
+                    <button
+                        style={{background: moveNumber === this.state.stepNumber ? "red" : ""}}
+                        onClick={() => this.jumpTo(moveNumber)}
+                    >
                         {description}
                     </button>
                 </li>
