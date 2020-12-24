@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function removeTodo(index) {
         todoData.splice(index, 1)
         
-        onTodosUpdated(todoData)
+        onTodosUpdated()
     }
 
     function completeTodo(index) {
