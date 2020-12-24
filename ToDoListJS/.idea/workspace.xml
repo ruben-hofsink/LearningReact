@@ -20,10 +20,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5e2ab36-374e-4ffb-9faa-e03aec980b46" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../todolistreact/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/public/logo192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/public/logo512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/public/robots.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/src/components/Form.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/src/components/Todo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/src/components/TodoList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../todolistreact/src/reportWebVitals.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,10 +64,13 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../todolistreact" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -74,7 +92,9 @@
       <option name="presentableId" value="Default" />
       <updated>1608303163960</updated>
       <workItem from="1608303165059" duration="5724000" />
-      <workItem from="1608541506817" duration="12133000" />
+      <workItem from="1608541506817" duration="13631000" />
+      <workItem from="1608797098102" duration="1168000" />
+      <workItem from="1608801212513" duration="1402000" />
     </task>
     <servers />
   </component>
@@ -98,5 +118,9 @@
       <screen x="1920" y="0" width="2560" height="1400" />
     </state>
     <state x="3241" y="344" key="#Intentions/0.0.1920.1040/1920.0.2560.1400@1920.0.2560.1400" timestamp="1608305311653" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1608765062293">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.2560.1400@0.0.1920.1040" timestamp="1608765062293" />
   </component>
 </project>
