@@ -6,14 +6,12 @@ const TodoList = (props) => {
     return(
         <div className="todo-container">
             <ul className="todo-list">
-                {props.filteredTodos.map(todo => (
+                {props.todos.map(todo => (
                     <Todo
-                        text={todo.text}
                         key={todo.id}
-                        completed={todo.completed}
-                        setTodos={props.setTodos}
+                        onComplete={() => props.onCompleteTodo(todo)}
+                        onRemove={() => props.onRemoveTodo(todo)}
                         todo={todo}
-                        todos={props.todos}
                     />
                 ))}
             </ul>

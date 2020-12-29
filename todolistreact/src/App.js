@@ -7,28 +7,44 @@ import TodoList from "./components/TodoList";
 
 
 function App() {
-    const [inputText, setInputText] = useState("");
     const [todos, setTodos] = useState([]);
     const [filter, setFilter] = useState("all");
-    const [filteredTodos, setFilteredTodos] = useState([]);
 
     //Run once when the app starts:
     useEffect( () => {
         getLocalTodos();
     }, []);
 
-    const filterHandler = () => {
-        switch(filter) {
-            case "completed":
-                setFilteredTodos(todos.filter(todo => todo.completed));
-                break;
-            case "uncompleted":
-                setFilteredTodos(todos.filter(todo => !todo.completed));
-                break;
-            default:
-                setFilteredTodos(todos);
-                break;
-        }
+    const todoMatchesFilter = (todo) => {
+        return filter === "all" || ((filter === "completed") === todo.completed)
+    }
+
+    const addTodo = (value) => {
+        setTodos([
+            ...todos,
+            {
+                text: value,
+                completed: false,
+                id: Math.random() * 1000 // gevaarlijk :)
+            }
+        ])
+    }
+
+    const removeTodo = (todo) => {
+        setTodos(todos.filter(t => t.id !== todo.id))
+    }
+
+    const completeTodo = (todo) => {
+        setTodos(todos.map(t => {
+            if (t.id === todo.id) {
+                return {
+                    ...todo,
+                    completed: !todo.completed
+                }
+            }
+
+            return  t
+        }))
     }
 
     const saveLocalTodos = () => {
@@ -44,9 +60,8 @@ function App() {
     }
 
     useEffect( () => {
-        filterHandler();
         saveLocalTodos();
-    }, [todos, filter]);
+    }, [todos]);
 
     return (
         <div className="App">
@@ -54,16 +69,13 @@ function App() {
                 <h1>Ruben's TodoList in React.js!</h1>
             </header>
             <Form
-                todos={todos}
-                setTodos={setTodos}
-                setInputText={setInputText}
-                inputText={inputText}
-                setFilter={setFilter}
+                onSubmit={addTodo}
+                onFilterChange={setFilter}
             />
             <TodoList
-                todos={todos}
-                setTodos={setTodos}
-                filteredTodos={filteredTodos}
+                todos={todos.filter(todoMatchesFilter)}
+                onCompleteTodo={completeTodo}
+                onRemoveTodo={removeTodo}
             />
         </div>
     );
