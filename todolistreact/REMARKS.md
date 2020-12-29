@@ -2,8 +2,8 @@
 Eerste ding wat me opvalt is dat je in `App.js` een paar state objecten gebruikt welke je allemaal volledig doorgeeft aan de components.
 Je `Todo` component krijgt bijvoorbeeld de volledige lijst met `todos` en volledige controlle om daar mee te doen wat hij wil `setTodos=props.setTodos`.
 
-Het is nergens voor nodig dat je `TODO` de volledige staat van je applicatie kan zien en begrijpen. 
-Het enige wat een `TODO` moet weten is is hoe zijn specifieke `todo` er uit ziet en wat er moet gebeuren als je deze verwijderd of complete.
+Het is nergens voor nodig dat je `Todo` de volledige staat van je applicatie kan zien en begrijpen. 
+Het enige wat een `Todo` moet weten is is hoe zijn specifieke `todo` er uit ziet en wat er moet gebeuren als je deze verwijderd of complete.
 
 Het is netter om dus bijvoorbeeld de volgende properties voor `Todo` te definieren:
 ```jsx
