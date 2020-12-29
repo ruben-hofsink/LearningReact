@@ -1,13 +1,13 @@
 # Waar zit je logica? 
 Eerste ding wat me opvalt is dat je in `App.js` een paar state objecten gebruikt welke je allemaal volledig doorgeeft aan de components.
-Je `TODO` component krijgt bijvoorbeeld de volledige lijst met `todos` en volledige controlle om daar mee te doen wat hij wil `setTodos=props.setTodos`.
+Je `Todo` component krijgt bijvoorbeeld de volledige lijst met `todos` en volledige controlle om daar mee te doen wat hij wil `setTodos=props.setTodos`.
 
 Het is nergens voor nodig dat je `TODO` de volledige staat van je applicatie kan zien en begrijpen. 
 Het enige wat een `TODO` moet weten is is hoe zijn specifieke `todo` er uit ziet en wat er moet gebeuren als je deze verwijderd of complete.
 
-Het is netter om dus bijvoorbeeld de volgende properties voor `TODO` te definieren:
+Het is netter om dus bijvoorbeeld de volgende properties voor `Todo` te definieren:
 ```jsx
-<TODO 
+<Todo 
  todo={}
  onComplete={}
  onRemove={}
@@ -15,7 +15,7 @@ Het is netter om dus bijvoorbeeld de volgende properties voor `TODO` te definier
 ```
 
 Stel je applicatie gaat nu iets compleet anders doen om todos bij te houden (niet meer in state maar in een externe database of niet meer in een lijst maar in een object of wat dan ook)
-dan hoeft je `TODO` hier niets van te merken. Hou je components dus relatief "dom".
+dan hoeft je `Todo` hier niets van te merken. Hou je components dus relatief "dom".
 
 Op dezelfde manier wil je dus ook je `TodoList` dom houden. Een `TodoList` moet een lijst van `todos` krijgen en die laten zien.
 Die hoeft niet weten hoe deze tot stand zijn gekomen (bijvoorbeeld filters). 
@@ -23,7 +23,7 @@ Die hoeft niet weten hoe deze tot stand zijn gekomen (bijvoorbeeld filters).
 
 
 # Dubbele props
-Je geeft aan je `TODO` nu deze props:
+Je geeft aan je `Todo` nu deze props:
 ```jsx
 <Todo
     text={todo.text}
